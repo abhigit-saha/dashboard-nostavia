@@ -10,16 +10,22 @@ const page = () => {
             A small description of AI Tools
           </div>
         </div>
-        <div className="flex">
-          <Image width={32} height={32} alt="" src="/Search.svg" />
-          {/* <img className="relative z-10 left-60" src="/Search.svg" alt="" /> */}
-          <input
-            className="h-[40px] w-[255px] rounded-full placeholder-gray-900 pl-4 "
-            type="text"
-            placeholder="Search"
-            style={{ textAlign: "left", color: "black" }}
-          />
-
+        <div className="flex items-center">
+          <div className="relative">
+            <Image
+              width={20}
+              height={20}
+              alt=""
+              src="/Search.svg"
+              className="absolute top-1/2 transform -translate-y-1/2 left-3"
+            />
+            <input
+              className="h-[40px] w-[255px] rounded-full placeholder-gray-900 pl-10"
+              type="text"
+              placeholder="Search"
+              style={{ textAlign: "left", color: "black" }}
+            />
+          </div>
           <select className="h-[40px] w-[156px] rounded-full ml-4 pl-4 placeholder-gray-900">
             <option value="" disabled selected>
               Most Popular
