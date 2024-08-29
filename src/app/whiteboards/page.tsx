@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
-const page = () => {
+
+const Page = () => {
   return (
     <div>
-      <div className="flex justify-between p-8">
-        <div className="space-y-1 mb-12">
-          <h1 className=" text-black text-[40px] font-bold">Whiteboards</h1>
-          <div className=" text-[#696969] text-[20px]">
+      <div className="flex justify-between items-start p-8">
+        <div className="space-y-1">
+          <h1 className="text-black text-[40px] font-bold">Whiteboards</h1>
+          <div className="text-[#696969] text-[20px]">
             Create a whiteboard for you
           </div>
         </div>
@@ -68,4 +69,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

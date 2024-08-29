@@ -26,6 +26,15 @@ const page = () => {
               style={{ textAlign: "left", color: "black" }}
             />
           </div>
+        <div className="flex ">
+          <Image className="absolute pt-3 right-[335px]" width={18} height={20} alt="" src="/Search.svg" />
+          {/* <img className="relative z-10 left-48" src="/Search.svg" width={32} height={32} alt="" /> */}
+          <input
+            className="h-[40px] w-[215px] rounded-full placeholder-gray-900 pl-4 "
+            type="text"
+            placeholder="Search"
+            style={{ textAlign: "left", color: "black" }}
+          />
 
           <select className="h-[40px] w-[156px] rounded-full pl-4 placeholder-gray-900">
             <option value="" disabled selected>
