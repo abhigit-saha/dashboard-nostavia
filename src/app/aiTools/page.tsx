@@ -1,12 +1,13 @@
 import React from "react";
 import Image from "next/image";
-const page = () => {
+
+const AIToolsPage = () => {
   return (
     <div>
-      <div className="flex justify-between p-8">
-        <div className="space-y-1 mb-12">
-          <div className=" text-black text-[40px] font-bold">AI Tools</div>
-          <div className=" text-[20px] text-[#696969]">
+      <div className="flex justify-between items-start p-8">
+        <div className="space-y-1">
+          <div className="text-black text-[40px] font-bold">AI Tools</div>
+          <div className="text-[20px] text-[#696969]">
             A small description of AI Tools
           </div>
         </div>
@@ -15,18 +16,18 @@ const page = () => {
             <Image
               width={20}
               height={20}
-              alt=""
+              alt="Search icon"
               src="/Search.svg"
-              className="absolute top-1/2 transform -translate-y-1/2 left-3"
+              className="absolute top-1/2 transform -translate-y-1/2 left-3 z-10"
             />
             <input
-              className="h-[40px] w-[255px] rounded-full placeholder-gray-900 pl-10"
+              className="h-[40px] w-[255px] rounded-full placeholder-gray-900 pl-10 bg-white"
               type="text"
               placeholder="Search"
-              style={{ textAlign: "left", color: "black" }}
+              style={{ color: "black" }}
             />
           </div>
-          <select className="h-[40px] w-[156px] rounded-full ml-4 pl-4 placeholder-gray-900">
+          <select className="h-[40px] w-[156px] rounded-full ml-4 pl-4 placeholder-gray-900 bg-white">
             <option value="" disabled selected>
               Most Popular
             </option>
@@ -39,4 +40,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default AIToolsPage;
