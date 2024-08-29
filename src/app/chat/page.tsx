@@ -8,7 +8,7 @@ import MedhaTextArea from "@/components/MedhaTextArea";
 function ChatPage() {
   const router = useRouter();
 
-  const handleButtonClick = (buttonType) => {
+  const handleButtonClick = (buttonType: string) => {
     if (buttonType === "chat") {
       router.push("/chat");
     } else if (buttonType === "notebook") {
