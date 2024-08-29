@@ -1,31 +1,18 @@
 "use client";
-import React, { useState } from "react";
-import { useRouter } from "next/navigation"; // Import useRouter
-import EnterClassroomArea from "@/components/EnterClassroomArea";
+import React from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-import MyAppsArea from "@/components/MyAppsArea";
 import ChatHistoryArea from "@/components/ChatHistoryArea";
 import MedhaTextArea from "@/components/MedhaTextArea";
 
-function Chatbot() {
-  const [questionsHistory, setQuestionsHistory] = useState([
-    "What is Medha?",
-    "What is Nostavia?",
-  ]);
-  const [qna, setQna] = useState([
-    { question: "What is Medha?", answer: "Medha is an AI Chatbot" },
-  ]);
-  const [activeButton, setActiveButton] = useState("chat"); // State to manage active button
+function ChatPage() {
+  const router = useRouter();
 
-  const router = useRouter(); // Initialize useRouter
-
-  const handleButtonClick = (buttonType: string) => {
-    setActiveButton(buttonType); // Set active button
-
+  const handleButtonClick = (buttonType) => {
     if (buttonType === "chat") {
-      router.push("/chat"); // Navigate to chat page
+      router.push("/chat");
     } else if (buttonType === "notebook") {
-      router.push("/notebook"); // Navigate to notebook page
+      router.push("/notebook");
     }
   };
 
@@ -34,7 +21,7 @@ function Chatbot() {
       <div className="p-8">
         {/* Greeting Section */}
         <div className="flex justify-between gap-x-[62px]">
-          <div className="space-y-1 mb-12 ">
+          <div className="space-y-1 mb-12">
             <div className="text-[40px] font-bold">AI Chatbot</div>
             <div className="text-[20px] text-gray-500">
               Chat with AI Chatbot for needs
@@ -43,11 +30,7 @@ function Chatbot() {
           <div className="flex justify-end gap-2">
             <div>
               <button
-                className={`rounded-3xl w-[91px] h-[41px] ${
-                  activeButton === "chat"
-                    ? "bg-[#C00F0C] text-white"
-                    : "bg-white"
-                }`}
+                className="rounded-3xl w-[91px] h-[41px] bg-[#C00F0C] text-white"
                 onClick={() => handleButtonClick("chat")}
               >
                 Chat
@@ -55,11 +38,7 @@ function Chatbot() {
             </div>
             <div>
               <button
-                className={`rounded-3xl w-[138px] h-[41px] ${
-                  activeButton === "notebook"
-                    ? "bg-[#C00F0C] text-white"
-                    : "bg-white"
-                }`}
+                className="rounded-3xl w-[138px] h-[41px] bg-white text-black"
                 onClick={() => handleButtonClick("notebook")}
               >
                 Notebook
@@ -70,18 +49,24 @@ function Chatbot() {
 
         <div className="grid grid-cols-3 gap-5 mt-6">
           <div className="col-span-1 h-full">
-            <ChatHistoryArea questions={questionsHistory} />
+            <ChatHistoryArea
+              questions={["What is Medha?", "What is Nostavia?"]}
+            />
           </div>
           <div className="col-span-2">
-            <MedhaTextArea qna={qna} />
+            <MedhaTextArea
+              qna={[
+                {
+                  question: "What is Medha?",
+                  answer: "Medha is an AI Chatbot",
+                },
+              ]}
+            />
           </div>
         </div>
-        {/* Main Content Section */}
-
-        {/* Right Column: My Apps Area */}
       </div>
     </div>
   );
 }
 
-export default Chatbot;
+export default ChatPage;
